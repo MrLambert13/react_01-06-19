@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/MrLambert13/react_01-06-19/issues"
   },
-  "homepage": "https://github.com/MrLambert13/react_01-06-19#readme"
+  "homepage": "https://github.com/MrLambert13/react_01-06-19#readme",
+  "dependencies": {
+    "react": "^16.8.6"
+  },
+  "devDependencies": {}
 }
