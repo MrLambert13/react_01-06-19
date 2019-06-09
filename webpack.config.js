@@ -3,15 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractLoader = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src', 'index.js'),
+    entry: path.resolve(__dirname, 'src', 'index.jsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: 'bundle.[chunkhash].js',
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -30,12 +30,11 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractLoader({
-            filename: 'style.css',
+            filename: 'style.[contenthash].css',
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html'),
             filename: 'index.html',
         }),
     ]
-
 };
