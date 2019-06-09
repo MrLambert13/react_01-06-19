@@ -20,5 +20,7 @@
   "dependencies": {
     "react": "^16.8.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "webpack": "^4.33.0"
+  }
 }
