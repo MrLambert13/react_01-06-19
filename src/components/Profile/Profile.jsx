@@ -1,4 +1,4 @@
-import './Profile.css';
+import './Profile.sass';
 
 import React, {Component} from 'react';
 import {ProfileImage} from 'components/ProfileImage';
