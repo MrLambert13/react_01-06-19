@@ -3,6 +3,7 @@ import './ImageItem.sass';
 import React, {Component} from 'react';
 import {Likes} from 'components/Likes';
 import {Comments} from 'components/Comments';
+import PropTypes from 'prop-types';
 
 export class ImageItem extends Component {
 
@@ -26,3 +27,9 @@ export class ImageItem extends Component {
         );
     }
 }
+
+ImageItem.propTypes = {
+    image: PropTypes.string,
+    likes: PropTypes.number,
+    comments: PropTypes.number
+};
