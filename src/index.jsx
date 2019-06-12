@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
 import {Gallery} from 'components/Gallery';
+import {Profile} from 'components/Profile';
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
         <div>
             <header>
                 <div className="container">
-                    <Profile/>>
+                    <Profile/>
                 </div>
             </header>
             <main>

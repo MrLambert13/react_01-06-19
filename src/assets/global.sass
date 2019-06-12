@@ -1,16 +1,25 @@
+//colors
+$alabaster: #fafafa
+$color_shark_approx: #262626
+$color_cornflower_blue_approx: #4d90fe
+
 root
   font-size: 10px
 
-*,
-*::before,
-*::after
+*
   box-sizing: border-box
 
+  &::before
+    box-sizing: border-box
+
+  &::after
+    box-sizing: border-box
+
 body
-  font-family: "Open Sans", Arial, sans-serif
+  font-family: Open Sans, Arial, sans-serif
   min-height: 100vh
-  background-color: #fafafa
-  color: #262626
+  background-color: $alabaster
+  color: $color_shark_approx
   padding-bottom: 3rem
 
 img
@@ -21,9 +30,26 @@ img
   margin: 0 auto
   padding: 0 2rem
 
+.btn
+  display: inline-block
+  font: inherit
+  background: none
+  border: none
+  color: inherit
+  padding: 0
+  cursor: pointer
+
+  &:focus
+    outline: 0.5rem auto $color_cornflower_blue_approx
+
+
 .visually-hidden
   position: absolute !important
   height: 1px
   width: 1px
   overflow: hidden
   clip: rect(1px, 1px, 1px, 1px)
+
+@keyframes loader
+  to
+    transform: rotate(360deg)

@@ -1,15 +1,21 @@
-import './Profile.sass';
+import './Profile.css';
 
 import React, {Component} from 'react';
+import {ProfileImage} from 'components/ProfileImage';
+import {ProfileSetting} from 'components/ProfileSetting';
+import {ProfileStat} from 'components/ProfileStat';
+import {ProfileBio} from 'components/ProfileBio';
+import {profile} from 'src/profile';
 
 export class Profile extends Component {
 
     render() {
-        const {} = this.props;
-
         return (
-            <div className="Profile">
-
+            <div className="profile">
+                <ProfileImage image={profile.image}/>
+                <ProfileSetting/>
+                <ProfileStat {...profile}/>
+                <ProfileBio/>
             </div>
         );
     }
