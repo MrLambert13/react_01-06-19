@@ -3,16 +3,23 @@ import 'assets/global.sass';
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
-import {ImageBox} from 'components/ImageBox';
+import {Gallery} from 'components/Gallery';
 
 class App extends Component {
   render() {
     return (
-      <main>
-        <div className="container">
-            <ImageBox/>
+        <div>
+            <header>
+                <div className="container">
+                    <Profile/>>
+                </div>
+            </header>
+            <main>
+                <div className="container">
+                    <Gallery/>
+                </div>
+            </main>
         </div>
-      </main>
     );
   } 
 }
