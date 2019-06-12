@@ -1,4 +1,4 @@
-import './ImageBox.scss';
+import './ImageBox.sass';
 
 import React, { Component } from 'react';
 
