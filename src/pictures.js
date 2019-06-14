@@ -1,8 +1,8 @@
 export const pictures = [
   {
     image: 'https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop',
-    likes: 52,
-    comments: 2,
+    likes: 11,
+    comments: 22,
   },
   {
     image: 'https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop',
@@ -37,7 +37,7 @@ export const pictures = [
   {
     image: 'https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop',
     likes: 52,
-    comments: 2,
+    comments: 3,
   },
   {
     image: 'https://images.unsplash.com/photo-1511407397940-d57f68e81203?w=500&h=500&fit=crop',
