@@ -5,21 +5,13 @@ import ReactDom from 'react-dom';
 
 import {Gallery} from 'components/Gallery';
 import {Profile} from 'components/Profile';
-import {Timer} from 'components/Timer';
+import {Auth} from 'components/Auth';
 
 class App extends Component {
-    state = {visible: true};
-
-    handleToggleClick = () => {
-        this.setState(prevState => ({visible: !prevState.visible}))
-    };
-
     render() {
-        const {visible} = this.state;
         return (
             <div>
-                <button onClick={this.handleToggleClick}>Toggle</button>
-                {visible && <Timer/>}
+                <Auth/>
                 <header>
                     <div className="container">
                         <Profile/>
