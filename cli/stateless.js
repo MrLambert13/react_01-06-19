@@ -36,7 +36,7 @@ fs.writeFileSync(
     componentCode,
 );
 //код компонента.css
-const componentCodeSASS = `.${componentName} {}`;
+const componentCodeSASS = `.${componentName} `;
 //Создаем файл с кодом из {componentCodeSASS}
 fs.writeFileSync(
     path.resolve(__dirname, '..', 'src', 'components', componentName, `${componentName}.sass`),
@@ -44,7 +44,7 @@ fs.writeFileSync(
 );
 
 //код index.js
-const indexCode = `export default from './${componentName}.jsx';`;
+const indexCode = `export from './${componentName}.jsx';`;
 //Создаем файл с кодом из {componentCodeSASS}
 fs.writeFileSync(
     path.resolve(__dirname, '..', 'src', 'components', componentName, 'index.js'),

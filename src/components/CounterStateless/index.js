@@ -1,1 +1,1 @@
-export default from './CounterStateless.jsx';
+export {CounterStateless} from './CounterStateless.jsx';
