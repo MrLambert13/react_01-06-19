@@ -16,13 +16,13 @@ fs.mkdirSync(
 );
 
 //код компонента.jsx
-const componentCode = `import './${componentName}.css';
+const componentCode = `import './${componentName}.sass';
 
 //React импортируем в каждом файле
 import React from 'react';
 
 //stateless
-export default function ${componentName}(props) {
+export function ${componentName}(props) {
     return (
         <div className="${componentName}">
             
@@ -36,16 +36,16 @@ fs.writeFileSync(
     componentCode,
 );
 //код компонента.css
-const componentCodeCSS = `.${componentName} {}`;
-//Создаем файл с кодом из {componentCodeCSS}
+const componentCodeSASS = `.${componentName} {}`;
+//Создаем файл с кодом из {componentCodeSASS}
 fs.writeFileSync(
-    path.resolve(__dirname, '..', 'src', 'components', componentName, `${componentName}.css`),
-    componentCodeCSS,
+    path.resolve(__dirname, '..', 'src', 'components', componentName, `${componentName}.sass`),
+    componentCodeSASS,
 );
 
 //код index.js
 const indexCode = `export default from './${componentName}.jsx';`;
-//Создаем файл с кодом из {componentCodeCSS}
+//Создаем файл с кодом из {componentCodeSASS}
 fs.writeFileSync(
     path.resolve(__dirname, '..', 'src', 'components', componentName, 'index.js'),
     indexCode,
