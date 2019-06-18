@@ -9,7 +9,11 @@
     "client:start": "webpack-dev-server --mode development",
     "client:build": "rimraf ./dist && webpack --mode production",
     "server:start": "node server",
-    "server:seeds": "node server/seeds"
+    "server:seeds": "node server/seeds",
+    "dev": "webpack-dev-server --mode development",
+    "dev:c": "node cli/component.js --name",
+    "dev:ss": "node cli/stateless.js --name",
+    "dev:con": "node cli/container.js --name"
   },
   "keywords": [],
   "author": "",
