@@ -8,10 +8,6 @@ import {ProfileBio} from 'components/ProfileBio';
 import {profile} from 'src/profile';
 
 export class Profile extends Component {
-
-    const
-    qwe = ProfileBio;
-
     render() {
         return (
             <div className="profile">

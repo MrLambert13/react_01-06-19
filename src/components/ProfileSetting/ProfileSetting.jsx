@@ -5,8 +5,6 @@ import React, {Component} from 'react';
 export class ProfileSetting extends Component {
 
     render() {
-        const {} = this.props;
-
         return (
             <div className="profile-user-settings">
                 <h1 className="profile-user-name">janedoe_</h1>

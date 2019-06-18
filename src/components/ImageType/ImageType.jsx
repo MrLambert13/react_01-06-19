@@ -5,8 +5,6 @@ import React, {Component} from 'react';
 export class ImageType extends Component {
 
     render() {
-        const {} = this.props;
-
         return (
             <div className="gallery-item-type">
                 <span className="visually-hidden">Gallery</span>
