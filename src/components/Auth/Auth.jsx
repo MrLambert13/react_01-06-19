@@ -1,3 +1,4 @@
+
 import './Auth.sass';
 
 import React, {Component} from 'react';
@@ -10,15 +11,17 @@ export class Auth extends Component {
 
     handleSignInClick = () => {
         const {username, password} = this.state;
+        const {onSuccess} = this.props;
         fetch('http://localhost:8888/auth', {
             headers: {
                 'Content-Type': 'application/json',
 
             },
+            method: 'post',
             body: JSON.stringify({username, password})
         })
             .then(response => response.json())
-            .then(data => console.log(data));
+            .then(data => onSuccess(data.token));
     };
 
     handleChangeInput = ({target: {name, value}}) => {
