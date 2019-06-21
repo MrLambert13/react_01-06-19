@@ -18,7 +18,7 @@ class App extends Component {
     render() {
         const {token} = this.state;
         return (
-            <div>
+            <div className='container'>
                 {!token && <Auth onSuccess={this.handleSuccess}/>}
                 {token && <Fragment>
                     <header>

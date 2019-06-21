@@ -34,8 +34,8 @@ export class Auth extends Component {
         const {username, password} = this.state;
         return (
             <div className="Auth">
-                <input onChange={this.handleChangeInput} name="username" type="text" value={username}/>
-                <input onChange={this.handleChangeInput} name="password" type="text" value={password}/>
+                <input onChange={this.handleChangeInput} name="username" type="text" value={username} placeholder="E-mail"/>
+                <input onChange={this.handleChangeInput} name="password" type="password" value={password} placeholder="Password"/>
                 <button onClick={this.handleSignInClick}>Sign In</button>
             </div>
         );
