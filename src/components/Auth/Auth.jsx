@@ -3,6 +3,7 @@ import './Auth.sass';
 import React, {Component} from 'react';
 
 //Sallie31@gmail.com
+//Cassandra21@yahoo.com
 export class Auth extends Component {
     state = {
         username: '',
@@ -17,7 +18,7 @@ export class Auth extends Component {
                 'Content-Type': 'application/json',
             },
             method: 'post',
-            body: JSON.stringify({username, password})
+            body: JSON.stringify({username, password}),
         })
             .then(response => response.json())
             .then(data => onSuccess(data.token));

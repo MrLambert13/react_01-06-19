@@ -12,10 +12,10 @@ export class Profile extends Component {
     constructor(props) {
         super(props);
 
-        fetch(`http://localhost:8888/api/users`, {
+        fetch(`http://localhost:8888/api/users/${props.token.id}`, {
             headers: {
                 'Content-Type': 'application/json',
-                'authorization': `Bearer ${props.token}`,
+                'authorization': `Bearer ${props.token.hash}`,
             },
         })
             .then(response => response.json())
