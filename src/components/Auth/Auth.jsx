@@ -1,8 +1,8 @@
-
 import './Auth.sass';
 
 import React, {Component} from 'react';
 
+//Sallie31@gmail.com
 export class Auth extends Component {
     state = {
         username: '',
@@ -15,7 +15,6 @@ export class Auth extends Component {
         fetch('http://localhost:8888/auth', {
             headers: {
                 'Content-Type': 'application/json',
-
             },
             method: 'post',
             body: JSON.stringify({username, password})
@@ -34,11 +33,12 @@ export class Auth extends Component {
         const {username, password} = this.state;
         return (
             <div className="Auth">
-                <input onChange={this.handleChangeInput} name="username" type="text" value={username} placeholder="E-mail"/>
-                <input onChange={this.handleChangeInput} name="password" type="password" value={password} placeholder="Password"/>
+                <input onChange={this.handleChangeInput} name="username" type="text" value={username}
+                       placeholder="E-mail"/>
+                <input onChange={this.handleChangeInput} name="password" type="password" value={password}
+                       placeholder="Password"/>
                 <button onClick={this.handleSignInClick}>Sign In</button>
             </div>
         );
     }
 };
-    

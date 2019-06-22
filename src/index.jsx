@@ -15,6 +15,8 @@ class App extends Component {
     handleSuccess = (token) => {
         this.setState({token});
     };
+
+
     render() {
         const {token} = this.state;
         return (
@@ -23,7 +25,7 @@ class App extends Component {
                 {token && <Fragment>
                     <header>
                         <div className="container">
-                            <Profile/>
+                            <Profile token={this.state.token}/>
                         </div>
                     </header>
                     <main>

@@ -36,13 +36,15 @@ app.post('/auth', async (req, res) => {
 
     const user = await User.find({email: username, password}).lean();
     if (user) {
-        delete user.password;
-        const token = jwt.sign({
-            _id: user._id,
-            email: user.email,
-            firstName: user.firstName,
-            lastName: user.lastName,
-        }, 'secret');
+        const token = {
+            id: user._id,
+            hash: jwt.sign({
+                _id: user._id,
+                email: user.email,
+                firstName: user.firstName,
+                lastName: user.lastName,
+            }, 'secret'),
+        };
         res.json({token});
     } else {
         res.status(401).json({message: 'Wrong credentials'});
@@ -53,7 +55,12 @@ app.all('/api*', verifyToken);
 
 app.get('/api/photos', async (req, res) => {
     const {page = 1, limit = 15} = req.query;
-    const photos = await Picture.find().skip(limit * (page - 1)).limit(limit);
+    const photos = await Picture.find()
+        .populate([
+            'comments.user',
+            'likes.user',
+            'owner'
+        ]).skip(limit * (page - 1)).limit(limit);
     const total = await Picture.countDocuments();
     res.json({
         page,
@@ -62,9 +69,25 @@ app.get('/api/photos', async (req, res) => {
     });
 });
 
+app.get('/api/users/:id', async (req, res) => {
+    let user = await User.findById(req.params.id);
+    user = user.toObject();
+
+    // удаляем пароль
+    delete user.password;
+
+    res.json(user);
+});
+
 app.get('/api/photos/:owner', async (req, res) => {
     const {page = 1, limit = 15} = req.query;
-    const photos = await Picture.find({owner: req.params.owner}).skip(limit * (page - 1)).limit(limit);
+    const photos = await Picture.find({owner: req.params.owner})
+        .populate([
+            'comments.user',
+            'likes.user',
+            'owner'
+        ])
+        .skip(limit * (page - 1)).limit(limit);
     const total = await Picture.countDocuments({owner: req.params.owner})
     res.json({
         page,
