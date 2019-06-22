@@ -1,18 +1,53 @@
+$color_bg: #191919
+$color_border: #3498db
+$color_active: #2ecc71
+$input_width: 200px
+
 .Auth
-  min-width: 13rem
-  max-width: 20rem
-  min-height: 8rem
-  max-height: 10rem
-
-  margin: auto
-  background: #9fb8e6
+  width: $input_width*2
+  padding: 40px
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  background: $color_bg
   text-align: center
-  padding-top: 15px
+  border-radius: 25px
 
-  & input
-    display: block
-    margin: 0 auto
-    margin-top: 5px
+.Auth h1
+  color: white
+  text-transform: uppercase
+  font-weight: 500
 
-  & button
-    margin-top: 5px
+.Auth input
+  background: none
+  display: block
+  margin: $input_width/10 auto
+  text-align: center
+  border: 2px solid $color_border
+  padding: 14px 10px
+  width: $input_width
+  outline: none
+  color: white
+  border-radius: 24px
+  transition: 0.25s
+
+.Auth input:focus
+  width: $input_width + 80
+  border-color: $color_active
+
+.Auth button
+  background: none
+  display: block
+  margin: $input_width/10 auto
+  text-align: center
+  border: 2px solid $color_active
+  padding: 14px 40px
+  outline: none
+  color: white
+  border-radius: 24px
+  transition: 0.25s
+  cursor: pointer
+
+.Auth button:hover
+  background: $color_active

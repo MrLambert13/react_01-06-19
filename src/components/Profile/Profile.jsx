@@ -9,20 +9,9 @@ import {profile} from 'src/profile';
 
 export class Profile extends Component {
 
-    constructor(props) {
-        super(props);
-
-        fetch(`http://localhost:8888/api/users/${props.token.id}`, {
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': `Bearer ${props.token.hash}`,
-            },
-        })
-            .then(response => response.json())
-            .then(data => console.log(data));
-    }
-
     render() {
+        const {token} = this.props;
+        console.log(token);
         return (
             <div className="profile">
                 <ProfileImage image={profile.image}/>
@@ -32,5 +21,5 @@ export class Profile extends Component {
             </div>
         );
     }
-};
+}
     

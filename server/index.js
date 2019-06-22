@@ -36,15 +36,12 @@ app.post('/auth', async (req, res) => {
 
     const user = await User.find({email: username, password}).lean();
     if (user) {
-        const token = {
-            id: user[0]._id,
-            hash: jwt.sign({
-                _id: user._id,
-                email: user.email,
-                firstName: user.firstName,
-                lastName: user.lastName,
-            }, 'secret'),
-        };
+        const token = jwt.sign({
+            _id: user._id,
+            email: user.email,
+            firstName: user.firstName,
+            lastName: user.lastName,
+        }, 'secret');
         res.json({token});
     } else {
         res.status(401).json({message: 'Wrong credentials'});
@@ -75,7 +72,6 @@ app.get('/api/users/:id', async (req, res) => {
 
     // удаляем пароль
     delete user.password;
-    delete user._id;
 
     res.json(user);
 });

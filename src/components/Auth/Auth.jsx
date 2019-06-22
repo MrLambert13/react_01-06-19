@@ -13,6 +13,7 @@ export class Auth extends Component {
     handleSignInClick = () => {
         const {username, password} = this.state;
         const {onSuccess} = this.props;
+
         fetch('http://localhost:8888/auth', {
             headers: {
                 'Content-Type': 'application/json',
@@ -34,6 +35,7 @@ export class Auth extends Component {
         const {username, password} = this.state;
         return (
             <div className="Auth">
+                <h1>Login</h1>
                 <input onChange={this.handleChangeInput} name="username" type="text" value={username}
                        placeholder="E-mail"/>
                 <input onChange={this.handleChangeInput} name="password" type="password" value={password}
@@ -42,4 +44,4 @@ export class Auth extends Component {
             </div>
         );
     }
-};
+}
