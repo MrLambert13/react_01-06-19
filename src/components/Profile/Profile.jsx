@@ -10,13 +10,14 @@ import {profile} from 'src/profile';
 export class Profile extends Component {
 
     render() {
-        const {token} = this.props;
+
+        const {user} = this.props;
         return (
             <div className="profile">
-                <ProfileImage image={profile.image}/>
-                <ProfileSetting/>
+                <ProfileImage image={user.avatar}/>
+                <ProfileSetting email={user.email}/>
                 <ProfileStat {...profile}/>
-                <ProfileBio/>
+                <ProfileBio {...user}/>
             </div>
         );
     }

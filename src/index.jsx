@@ -9,28 +9,29 @@ import {Auth} from 'components/Auth';
 
 class App extends Component {
     state = {
-        token: null
+        token: null,
+        user: null
     };
 
-    handleSuccess = (token) => {
-        this.setState({token});
+    handleSuccess = (token, user) => {
+        this.setState({token, user});
     };
 
 
     render() {
-        const {token} = this.state;
+        const {token, user} = this.state;
         return (
             <div className='container'>
                 {!token && <Auth onSuccess={this.handleSuccess}/>}
                 {token && <Fragment>
                     <header>
                         <div className="container">
-                            <Profile/>
+                            <Profile user={user}/>
                         </div>
                     </header>
                     <main>
                         <div className="container">
-                            <Gallery token={token}/>
+                            <Gallery />
                         </div>
                     </main>
                 </Fragment>}

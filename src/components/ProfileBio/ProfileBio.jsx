@@ -5,10 +5,10 @@ import React, {Component} from 'react';
 export class ProfileBio extends Component {
 
     render() {
-        // const {text} = this.props;
+        const {firstName, lastName, bio} = this.props;
         return (
             <div className="profile-bio">
-                <p><span className="profile-real-name">Jane Doe</span> text ️</p>
+                <p><span className="profile-real-name">{firstName} {lastName}</span> {bio} ️</p>
             </div>
         );
     }

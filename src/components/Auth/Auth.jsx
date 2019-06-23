@@ -24,7 +24,7 @@ export class Auth extends Component {
                 }
                 return response.json();
             })
-            .then(data => onSuccess(data.token));
+            .then(data => onSuccess(data.token, data.user));
     }
 
     handleTextChange = ({target: {name, value}}) => {
