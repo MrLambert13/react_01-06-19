@@ -34,7 +34,7 @@ app.use(cors());
 app.post('/auth', async (req, res) => {
     const {username, password} = req.body;
 
-    const user = await User.find({email: username, password}).lean();
+    let user = await User.findOne({email: username, password}).lean();
     if (user) {
         const token = jwt.sign({
             _id: user._id,
@@ -42,7 +42,8 @@ app.post('/auth', async (req, res) => {
             firstName: user.firstName,
             lastName: user.lastName,
         }, 'secret');
-        res.json({token});
+        delete user.password;
+        res.json({token, user});
     } else {
         res.status(401).json({message: 'Wrong credentials'});
     }
@@ -85,13 +86,13 @@ app.get('/api/photos/:owner', async (req, res) => {
             'owner'
         ])
         .skip(limit * (page - 1)).limit(limit);
-    const total = await Picture.countDocuments({owner: req.params.owner})
+    const total = await Picture.countDocuments({owner: req.params.owner});
     res.json({
         page,
         total,
         photos,
     });
-})
+});
 
 app.listen(8888, () => {
     console.log('Server has been started!');
