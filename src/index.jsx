@@ -6,11 +6,12 @@ import ReactDom from 'react-dom';
 import { Gallery } from 'components/Gallery';
 import { Profile } from 'components/Profile';
 import { Auth } from 'components/Auth';
+import { Timer } from 'components/Timer';
 
 class App extends Component {
   state = {
     token: null,
-    user: null
+    user: null,
   };
 
   handleSuccess = (token, user) => {
@@ -31,7 +32,7 @@ class App extends Component {
           </header>
           <main>
             <div className="container">
-              <Gallery />
+              <Gallery token={token} />
             </div>
           </main>
         </Fragment>}
