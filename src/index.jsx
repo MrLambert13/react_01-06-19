@@ -6,7 +6,6 @@ import ReactDom from 'react-dom';
 import { Gallery } from 'components/Gallery';
 import { Profile } from 'components/Profile';
 import { Auth } from 'components/Auth';
-import { CounterStateless } from './components/CounterStateless';
 
 class App extends Component {
   state = {
@@ -24,7 +23,6 @@ class App extends Component {
     return (
       <div className='container'>
         {!token && <Auth onSuccess={this.handleSuccess} />}
-        <CounterStateless />
         {token && <Fragment>
           <header>
             <div className="container">

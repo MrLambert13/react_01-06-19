@@ -8,11 +8,13 @@ const mapping = {
   plus: 1
 };
 
-const handleButton = ({ target: { name } }) => setCount(count + mapping[name]);
 
 //stateless
 export function CounterStateless() {
   const [count, setCount] = useState(0);
+
+  const handleButton = ({ target: { name } }) => setCount(count + mapping[name]);
+
   return (
     <div className="CounterStateless">
       {count > 0 && <button name="minus" onClick={handleButton}>-</button>}
