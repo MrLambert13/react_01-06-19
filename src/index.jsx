@@ -32,7 +32,7 @@ class App extends Component {
           </header>
           <main>
             <div className="container">
-              <Gallery token={token} />
+              <Gallery token={token} />a
             </div>
           </main>
         </Fragment>}
