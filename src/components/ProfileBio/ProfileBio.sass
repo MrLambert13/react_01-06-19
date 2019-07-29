@@ -6,15 +6,17 @@
   line-height: 1.5
   float: left
   width: calc(66.666% - 2rem)
+
+  @media screen and (max-width: 40rem)
+    font-size: 1.4rem
+    margin-top: 1.5rem
+    flex-basis: 100%
+
   +support_width
     @media (max-width: 40rem)
       grid-column: 1 / -1
       margin: 0
   +profile_media_screen
-  @media screen and (max-width: 40rem)
-    font-size: 1.4rem
-    margin-top: 1.5rem
-    flex-basis: 100%
 
 .profile-real-name
   font-weight: 600

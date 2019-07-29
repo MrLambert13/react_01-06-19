@@ -7,6 +7,13 @@ $alto: #dbdbdb
   width: calc(66.666% - 2rem)
   margin-top: 1.1rem
 
+  @media screen and (max-width: 40rem)
+    +profile_screen
+    flex-basis: calc(100% - 10.7rem)
+    display: flex
+    flex-wrap: wrap
+    margin-top: 1rem
+
   @supports(display: grid)
     +width_all
     @media (max-width: 40rem)
@@ -14,13 +21,6 @@ $alto: #dbdbdb
       grid-template-columns: auto 1fr
       grid-gap: 1rem
       margin: 0
-
-  @media screen and (max-width: 40rem)
-    +profile_screen
-    flex-basis: calc(100% - 10.7rem)
-    display: flex
-    flex-wrap: wrap
-    margin-top: 1rem
 
 .profile-user-name
   display: inline-block

@@ -7,6 +7,13 @@
     display: block
     clear: both
 
+  @media screen and (max-width: 40rem)
+    display: flex
+    flex-wrap: wrap
+    padding: 4rem 0
+    &:after
+      display: none
+
   @supports (display: grid)
     display: grid
     grid-template-columns: 1fr 2fr
@@ -16,10 +23,3 @@
     @media(max-width: 40rem)
       grid-template-columns: auto 1fr
       grid-row-gap: 1.5rem
-
-  @media screen and (max-width: 40rem)
-    display: flex;
-    flex-wrap: wrap;
-    padding: 4rem 0;
-    &:after
-      display: none
