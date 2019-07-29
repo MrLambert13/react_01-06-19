@@ -1,7 +1,30 @@
+@import 'assets/_mixins.sass'
+
 .profile-stats
   margin-top: 2.3rem
   float: left
   width: calc(66.666% - 2rem)
+
+  +support_width
+    @media (max-width: 40rem)
+      grid-column: 1 / -1
+      margin: 0
+
+  @media screen and (max-width: 40rem)
+    flex-basis: 100%
+    order: 1
+    margin-top: 1.5rem
+    +profile_screen
+    ul
+      display: flex
+      text-align: center
+      padding: 1.2rem 0
+      border-top: 0.1rem solid #dadada
+      border-bottom: 0.1rem solid #dadada
+    li
+      font-size: 1.4rem
+      flex: 1
+      margin: 0
 
   li
     display: inline-block
@@ -15,3 +38,5 @@
 
 .profile-stat-count
   font-weight: 600
+  @media screen and (max-width: 40rem)
+    display: block

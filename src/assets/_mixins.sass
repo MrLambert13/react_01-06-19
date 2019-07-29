@@ -1,0 +1,16 @@
+=width_all
+  width: auto
+  margin: 0
+
+=support_width
+  @supports(display: grid)
+    +width_all
+    @content
+
+=profile_screen
+  float: none
+  width: auto
+
+=profile_media_screen
+  @media screen and (max-width: 40rem)
+    +profile_screen

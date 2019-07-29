@@ -1,7 +1,25 @@
+@import 'assets/_mixins.sass'
+
 .profile
   padding: 5rem 0
+  &:after
+    content: ""
+    display: block
+    clear: both
 
-.profile::after
-  content: ""
-  display: block
-  clear: both
+  @supports (display: grid)
+    display: grid
+    grid-template-columns: 1fr 2fr
+    grid-template-rows: repeat(3, auto)
+    grid-column-gap: 3rem
+    align-items: center
+    @media(max-width: 40rem)
+      grid-template-columns: auto 1fr
+      grid-row-gap: 1.5rem
+
+  @media screen and (max-width: 40rem)
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4rem 0;
+    &:after
+      display: none

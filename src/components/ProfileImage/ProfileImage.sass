@@ -1,3 +1,5 @@
+@import 'assets/_mixins.sass'
+
 .profile-image
   float: left
   width: calc(33.333% - 1rem)
@@ -5,7 +7,15 @@
   justify-content: center
   align-items: center
   margin-right: 3rem
+  @supports(display: grid)
+    +width_all
+    grid-row: 1/-1
+    @media (max-width: 40rem)
+      grid-row: 1 / 2
+  +profile_media_screen
 
   img
+    width: 152px
     border-radius: 50%
-    width: calc(33% - 1rem)
+    @media screen and (max-width: 40rem)
+      width: 7.7rem

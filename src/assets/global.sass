@@ -1,25 +1,19 @@
-//colors
-$alabaster: #fafafa
-$color_shark_approx: #262626
-$color_cornflower_blue_approx: #4d90fe
+$media_width: 40rem
+$body_color: #fafafa
+$text_color: #262626
+$button_color_onfocus: #4d90fe
 
-root
+\:root
   font-size: 10px
 
-*
+* //after, before
   box-sizing: border-box
-
-  &::before
-    box-sizing: border-box
-
-  &::after
-    box-sizing: border-box
 
 body
   font-family: Open Sans, Arial, sans-serif
   min-height: 100vh
-  background-color: $alabaster
-  color: $color_shark_approx
+  background-color: $body_color
+  color: $text_color
   padding-bottom: 3rem
 
 img
@@ -40,7 +34,7 @@ img
   cursor: pointer
 
   &:focus
-    outline: 0.5rem auto $color_cornflower_blue_approx
+    outline: 0.5rem auto $button_color_onfocus
 
 
 .visually-hidden

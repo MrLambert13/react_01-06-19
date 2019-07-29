@@ -1,9 +1,12 @@
+@import 'assets/_mixins.sass'
+
 .gallery-item
   position: relative
   flex: 1 0 22rem
   margin: 1rem
   color: #fff
   cursor: pointer
+  +support_width
 
 .gallery-item:hover .gallery-item-info,
 .gallery-item:focus .gallery-item-info
@@ -19,8 +22,3 @@
 .fa-clone,
 .fa-comment
   transform: rotateY(180deg)
-
-@supports (display: grid)
-  .gallery-item
-    width: auto
-    margin: 0

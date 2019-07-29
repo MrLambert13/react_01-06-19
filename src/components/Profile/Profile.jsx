@@ -13,7 +13,7 @@ export class Profile extends Component {
     return (
       <div className="profile">
         <ProfileImage image={user.avatar} />
-        <ProfileSetting email={user.email} />
+        <ProfileSetting email={user.firstName} />
         <ProfileStat posts='13' followers='13' following='13' />
         <ProfileBio {...user} />
       </div>

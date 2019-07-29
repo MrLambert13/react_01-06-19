@@ -1,17 +1,33 @@
-//colors
+@import 'assets/_mixins.sass'
+
 $alto: #dbdbdb
 
 .profile-user-settings
   float: left
   width: calc(66.666% - 2rem)
-
-.profile-user-settings
   margin-top: 1.1rem
+
+  @supports(display: grid)
+    +width_all
+    @media (max-width: 40rem)
+      display: grid
+      grid-template-columns: auto 1fr
+      grid-gap: 1rem
+      margin: 0
+
+  @media screen and (max-width: 40rem)
+    +profile_screen
+    flex-basis: calc(100% - 10.7rem)
+    display: flex
+    flex-wrap: wrap
+    margin-top: 1rem
 
 .profile-user-name
   display: inline-block
   font-size: 3.2rem
   font-weight: 300
+  @media screen and (max-width: 40rem)
+    font-size: 2.2rem
 
 .profile-edit-btn
   font-size: 1.4rem
@@ -21,7 +37,22 @@ $alto: #dbdbdb
   border-radius: 0.3rem
   padding: 0 2.4rem
   margin-left: 2rem
+  @media screen and (max-width: 40rem)
+    order: 1
+    padding: 0
+    text-align: center
+    margin-top: 1rem
+    margin-left: 0
+    flex-basis: 100%
+  @supports(display: grid)
+    +width_all
+    @media (max-width: 40rem)
+      grid-column: 1 / -1
+      margin: 0
 
 .profile-settings-btn
   font-size: 2rem
   margin-left: 1rem
+  @supports(display: grid)
+    @media (max-width: 40rem)
+      margin: 0
